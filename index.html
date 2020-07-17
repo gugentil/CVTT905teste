@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CV Gustavo Gentil</title>
+		
+		<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="js/functions.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Curriculo de Trabalho</h1>
+			<nav>
+				<a href="https://br.linkedin.com/in/gustavo-gentil-martins-03a4a5120" >Linked In</a>
+				<a href="https://www.ericsson.com" >Ericsson</a>
+				<a href="https://www.ft.unicamp.br/" >Unicamp</a>
+				<a href="https://www.mercadolivre.com.br/perfil/GUGENTS" >Mercado Livre</a>
+			</nav>
+		</header>
+<section>
+			<h2>Biogreafia</h2>
+                        <div id="frame2" class="frame2">
+   			 Quadro
+  			</div>
+  			<a href="javascript:movePrevious()">Previous</a>
+  			<a href="javascript:moveNext()">Next</a>
+
+  			<p onclick="mostrarTodos()">Clique para ver todas as fotos</p>
+  			<div id="todas_as_fotos">
+  			</div>
+
+				<p>Nome: Gustavo Gentil Martins<br/>
+				Idade: 23 anos<br/>
+				Cidade: São Paulo</p>		
+			
+			<details><summary>Formação acadêmica</summary>
+				<p>Bacharel: Engenharia de Telecomunicações (2015-2020)</p>		
+			</details>
+			<details><summary>Vinculos Profissionais</summary>
+				<p>Estágio na área de Networks na empresa Ericsson Telecomunicações(2019-2020)</p>
+			</details>
+			<details><summary>Línguas</summary>
+			<div id="frame" class="frame1">
+    			Passe o mouse sobre as bandeiras dos paises para descobrir a fluência
+ 			</div>
+
+ 			<img class="image1" onmouseout="undisplayPicture()" onmouseover="displayPicture(this)" alt="Português: Fluente" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg"/>
+  			<img class="image1" onmouseout="undisplayPicture()" onmouseover="displayPicture(this)" alt="Inglês: Avançado" src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg"/>
+  			<img class="image1" onmouseout="undisplayPicture()" onmouseover="displayPicture(this)" alt="Espanhol: Básico" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/1200px-Flag_of_Spain.svg.png"/>
+			<img class="image1" onmouseout="undisplayPicture()" onmouseover="displayPicture(this)" alt="Italiano: Básico" src="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg"/>
+	    			<ul>
+					<li>Português</li>
+					<li>Inglês</li>
+					<li>Espanhol:</li>
+					<li>Italiano</li>				
+				</ul>		
+			</details>	
+		</section>
+		
+		<section>
+			<h2>Hobbies</h2>
+			<details><summary>Projetos Pessoais</summary>
+				<p>IC: Desenvolvimento de um Robô para inspeção de Revestimento Predial<br/>
+				TCC: Aplicação de GPS Indoor com o uso de BLE para indústrias e comercios.<br/>
+				Mercado Livre: 3 anos de trabalho por conta própria com montagem e manutenção de computadores.</p>
+				</details>		
+			<details><summary>Hobbies</summary>
+				<ul>
+					<li>Música</li>
+					<li>Filmes</li>
+					<li>Video Games</li>
+					<li>Skate</li>				
+				</ul>			
+			</details>	
+
+			
+	<h2>Fale comigo:</h2>
+    
+    <form id = "contactForm">
+      <p>
+	<label>Nome: <input type="text" name="name" id="name"/></label>
+      </p>
+      <p>
+	<label>Empresa:<input type="text" name="company" id="company"/>
+      </p>
+      <p>
+	<label>Email:<input type="text" name="email"/>
+      </p>
+      <p>
+	<label>Telefone:<input type="text" name="phone" id="phone"/>
+      </p>
+      <p>
+	<label>Messagem:</br><textarea name="message" rows="10" cols="33" id="message"></textarea>
+	</label>
+      </p>
+      <p>
+	<button type="submit" onclick="return submitForm()">Submit</button>
+      </p>
+    </form>
+    
+    <div class="closed" id="confirm">Sua mensagem foi enviada!</>
+
+
+
+
+
+
+		</section>
+  
+
+		<footer>
+			<p>Projeto final Currículo para a disciplina TT905</p>
+		</footer>
+
+	</body>
+</html>
