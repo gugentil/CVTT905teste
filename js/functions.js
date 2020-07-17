@@ -1,4 +1,3 @@
-﻿
 function submitForm(){
     const form = document.forms['contactForm']
     
@@ -11,9 +10,8 @@ function submitForm(){
     console.log(name)
 
     saveMessage(name, company, email, phone, message)
+    afterSend()
 
-    afterSend();
-    
     return false;
 }
 
@@ -22,80 +20,44 @@ function saveMessage(name, company, email, phone, message){
     var newDatabaseReference = databaseReference.push();
 
     newDatabaseReference.set(
-	{
-	    name: name,
-	    company: company,
-	    email: email,
-	    phone: phone,
-	    message: message
-	}
+    {
+        name: name,
+        company: company,
+        email: email,
+        phone: phone,
+        message: message
+    }
     )
 }
 
+
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyBqSlcTPxeBAZABKaVVzCXTOoiS92YJMQA",
+    authDomain: "progweb-2df8b.firebaseapp.com",
+    databaseURL: "https://progweb-2df8b.firebaseio.com",
+    projectId: "progweb-2df8b",
+    storageBucket: "progweb-2df8b.appspot.com",
+    messagingSenderId: "798098222842",
+    appId: "1:798098222842:web:aa7ea12f0c61910ea02343",
+    measurementId: "G-JBGW9ND60Y"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
 function afterSend(){
-    confirm = document.getElementById("confirm");
-    confirm.className = "open";
-    // Esperar 3 segundos
+    confirm = document.getElementById("confirm")
+    confirm.className = "open"
     setTimeout(
-	() => {
-	    confirm.className = "closed";
-	}, 3000);
+        function(){
+        confirm.className = "closed";
+    },3000);
+    document.getElementById('submitForm').reset();
 }
+
+// 
 
 var databaseReference = firebase.database().ref("TT905")
-
-
-/*
-  Say Hello
-*/
-
-function sayHelloToFirebase() {
-    const form = document.forms['sayHello']
-    
-    var name     = form["name"].value
-
-    // Criando uma referência para a função que está no servidor.
-    const sayHello = firebase.functions().httpsCallable("sayHello");
-    sayHello(
-	{
-	    name : name 
-	}
-    ).then(
-	(result) => {
-	    alert(result.data);
-	}
-    );
-    
-    return false;
-}
-
-
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
-function submitAuthentication(e){
-    e.preventDefault();
-    const form = document.forms["login_form"];
-
-    const email = form.email.value;
-    const pass  = form.senha.value;
-
-    firebase.auth().signInWithEmailAndPassword(email, pass);    
-}
-
-
-
-
-function submitRegistro(e){
-    e.preventDefault();
-
-    const form = document.forms["login_form"];
-
-    const email = form.email.value;
-    const pass  = form.senha.value;
-
-    firebase.auth().createUserWithEmailAndPassword(email, pass);
-}
-
 
 
 
